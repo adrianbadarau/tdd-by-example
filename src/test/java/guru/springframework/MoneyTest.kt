@@ -23,6 +23,7 @@ class MoneyTest {
     internal fun testEqualityDollar() {
         assertEquals(Dollar(5), Dollar(5))
         assertNotEquals(Dollar(5), Dollar(15))
+        assertNotEquals(Dollar(5), Franc(5))
     }
 
     @Test
