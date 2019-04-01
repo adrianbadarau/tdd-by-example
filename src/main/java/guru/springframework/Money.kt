@@ -1,6 +1,6 @@
 package guru.springframework
 
-open class Money(protected val amount: Int) {
+abstract class Money(protected val amount: Int) {
 
     override fun equals(other: Any?): Boolean {
         if (other == null) return false
@@ -13,8 +13,20 @@ open class Money(protected val amount: Int) {
         return true
     }
 
+    abstract fun times(multiplier: Int): Money
+
     override fun hashCode(): Int {
         return amount
+    }
+
+    companion object {
+        fun dollar(amount: Int): Money {
+            return Dollar(amount)
+        }
+
+        fun franc(amount: Int): Money {
+            return Franc(amount)
+        }
     }
 
 }

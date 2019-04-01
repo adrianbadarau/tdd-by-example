@@ -12,32 +12,28 @@ class MoneyTest {
 
     @Test
     internal fun testMultiplicationDollar() {
-        val five = Dollar(5)
-        var product = five.times(2)
-        assertEquals(Dollar(10), product)
-        product = five.times(3)
-        assertEquals(Dollar(15), product)
+        val five = Money.dollar(5)
+        assertEquals(Money.dollar(10), five.times(2))
+        assertEquals(Money.dollar(15), five.times(3))
     }
 
     @Test
     internal fun testEqualityDollar() {
-        assertEquals(Dollar(5), Dollar(5))
-        assertNotEquals(Dollar(5), Dollar(15))
-        assertNotEquals(Dollar(5), Franc(5))
+        assertEquals(Money.dollar(5), Money.dollar(5))
+        assertNotEquals(Money.dollar(5), Money.dollar(15))
+        assertNotEquals(Money.dollar(5), Money.franc(5))
     }
 
     @Test
     internal fun testMultiplicationFranc() {
-        val five = Franc(5)
-        var product = five.times(2)
-        assertEquals(Franc(10), product)
-        product = five.times(3)
-        assertEquals(Franc(15), product)
+        val five = Money.franc(5)
+        assertEquals(Money.franc(10), five.times(2))
+        assertEquals(Money.franc(15), five.times(3))
     }
 
     @Test
     internal fun testEqualityFranc() {
-        assertEquals(Franc(5), Franc(5))
-        assertNotEquals(Franc(5), Franc(15))
+        assertEquals(Money.franc(5), Money.franc(5))
+        assertNotEquals(Money.franc(5), Money.franc(15))
     }
 }
