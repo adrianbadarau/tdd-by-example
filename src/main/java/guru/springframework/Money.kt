@@ -1,6 +1,10 @@
 package guru.springframework
 
-abstract class Money(protected val amount: Int) {
+abstract class Money(protected val amount: Int, protected val currency: String) {
+
+    fun currency(): String {
+        return currency
+    }
 
     override fun equals(other: Any?): Boolean {
         if (other == null) return false
@@ -20,12 +24,12 @@ abstract class Money(protected val amount: Int) {
     }
 
     companion object {
-        fun dollar(amount: Int): Money {
-            return Dollar(amount)
+        fun dollar(amount: Int, currency: String = "USD"): Money {
+            return Dollar(amount, currency)
         }
 
-        fun franc(amount: Int): Money {
-            return Franc(amount)
+        fun franc(amount: Int, currency: String = "CHF"): Money {
+            return Franc(amount, currency)
         }
     }
 
