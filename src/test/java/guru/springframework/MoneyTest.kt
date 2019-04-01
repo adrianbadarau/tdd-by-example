@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Assertions.assertNotEquals
 class MoneyTest {
 
     @Test
-    internal fun testMultiplication() {
+    internal fun testMultiplicationDollar() {
         val five = Dollar(5)
         var product = five.times(2)
         assertEquals(Dollar(10), product)
@@ -20,8 +20,23 @@ class MoneyTest {
     }
 
     @Test
-    internal fun testEquality() {
+    internal fun testEqualityDollar() {
         assertEquals(Dollar(5), Dollar(5))
         assertNotEquals(Dollar(5), Dollar(15))
+    }
+
+    @Test
+    internal fun testMultiplicationFranc() {
+        val five = Franc(5)
+        var product = five.times(2)
+        assertEquals(Franc(10), product)
+        product = five.times(3)
+        assertEquals(Franc(15), product)
+    }
+
+    @Test
+    internal fun testEqualityFranc() {
+        assertEquals(Franc(5), Franc(5))
+        assertNotEquals(Franc(5), Franc(15))
     }
 }
