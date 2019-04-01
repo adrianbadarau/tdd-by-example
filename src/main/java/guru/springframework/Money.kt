@@ -1,23 +1,21 @@
 package guru.springframework
 
-abstract class Money(protected val amount: Int, protected val currency: String) {
+open class Money(protected val amount: Int, protected val currency: String) {
 
     fun currency(): String {
         return currency
     }
 
     override fun equals(other: Any?): Boolean {
-        if (other == null) return false
-        if (this === other) return true
-        if (other !is Money) return false
-        if (this::class != other::class) return false
-
-        if (amount != other.amount) return false
+        val money = other as Money
+        if (amount != money.amount || !currency.equals(money.currency())) return false
 
         return true
     }
 
-    abstract fun times(multiplier: Int): Money
+    open fun times(multiplier: Int): Money {
+        return Money(amount * multiplier, currency)
+    }
 
     override fun hashCode(): Int {
         return amount
