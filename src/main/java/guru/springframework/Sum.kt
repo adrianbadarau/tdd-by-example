@@ -7,6 +7,10 @@ class Sum(val augment: Expresion, val addmend: Expresion) : Expresion {
     }
 
     override fun plus(addend: Expresion): Expresion {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return Sum(this, addend)
+    }
+
+    override fun times(multiplier: Int): Expresion {
+        return Sum(augment.times(multiplier), addmend.times(multiplier))
     }
 }

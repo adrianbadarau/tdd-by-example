@@ -17,7 +17,7 @@ open class Money(protected val amount: Int, protected val currency: String) : Ex
         return true
     }
 
-    open fun times(multiplier: Int): Money {
+    override fun times(multiplier: Int): Expresion {
         return Money(amount * multiplier, currency)
     }
 
