@@ -6,6 +6,10 @@ open class Money(protected val amount: Int, protected val currency: String) : Ex
         return currency
     }
 
+    fun getAmmount(): Int {
+        return amount
+    }
+
     override fun equals(other: Any?): Boolean {
         val money = other as Money
         if (amount != money.amount || !currency.equals(money.currency())) return false
@@ -22,7 +26,7 @@ open class Money(protected val amount: Int, protected val currency: String) : Ex
     }
 
     fun plus(addend: Money): Expresion {
-        return Money(amount + addend.amount, addend.currency)
+        return Sum(this, addend)
     }
 
     companion object {
@@ -33,6 +37,10 @@ open class Money(protected val amount: Int, protected val currency: String) : Ex
         fun franc(amount: Int, currency: String = "CHF"): Money {
             return Money(amount, currency)
         }
+    }
+
+    override fun reduce(to:String):Money{
+        return this
     }
 
 }
