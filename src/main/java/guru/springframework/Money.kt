@@ -25,7 +25,7 @@ open class Money(protected val amount: Int, protected val currency: String) : Ex
         return amount
     }
 
-    fun plus(addend: Money): Expresion {
+    override fun plus(addend: Expresion): Expresion {
         return Sum(this, addend)
     }
 
