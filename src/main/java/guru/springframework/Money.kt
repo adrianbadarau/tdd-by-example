@@ -23,11 +23,11 @@ open class Money(protected val amount: Int, protected val currency: String) {
 
     companion object {
         fun dollar(amount: Int, currency: String = "USD"): Money {
-            return Dollar(amount, currency)
+            return Money(amount, currency)
         }
 
         fun franc(amount: Int, currency: String = "CHF"): Money {
-            return Franc(amount, currency)
+            return Money(amount, currency)
         }
     }
 
