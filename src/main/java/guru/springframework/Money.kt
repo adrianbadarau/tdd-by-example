@@ -1,6 +1,6 @@
 package guru.springframework
 
-open class Money(protected val amount: Int, protected val currency: String) {
+open class Money(protected val amount: Int, protected val currency: String) : Expresion {
 
     fun currency(): String {
         return currency
@@ -19,6 +19,10 @@ open class Money(protected val amount: Int, protected val currency: String) {
 
     override fun hashCode(): Int {
         return amount
+    }
+
+    fun plus(addend: Money): Expresion {
+        return Money(amount + addend.amount, addend.currency)
     }
 
     companion object {

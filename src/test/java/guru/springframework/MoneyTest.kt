@@ -34,4 +34,13 @@ class MoneyTest {
         assertEquals("USD", Money.dollar(1).currency())
         assertEquals("CHF", Money.franc(1).currency())
     }
+
+    @Test
+    internal fun testSimpleAddition() {
+        val five = Money.dollar(5)
+        val sum = five.plus(five)
+        val bank = Bank()
+        val reduced = bank.reduce(sum, "USD")
+        assertEquals(Money.dollar(10), reduced)
+    }
 }
