@@ -39,8 +39,8 @@ open class Money(protected val amount: Int, protected val currency: String) : Ex
         }
     }
 
-    override fun reduce(to:String):Money{
-        return this
+    override fun reduce(bank: Bank, to: String): Money {
+        return Money(amount / bank.rate(this.currency, to), to)
     }
 
 }
