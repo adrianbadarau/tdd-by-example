@@ -1,4 +1,6 @@
-# Test Driven Development By Example
+# Kotlin version of Test Driven Development By Example
+
+This is my refactored repository, the result of me follwing the course and implementing the material in Kotlin
 
 All source code examples in the repository are for my [Online Course - Testing Spring Beginner to Guru](https://www.udemy.com/testing-spring-boot-beginner-to-guru/?couponCode=GITHUB_REPO)
 
@@ -8,12 +10,9 @@ In this repository, I look at using Beck's classic TDD Money Example - updated t
 
 ## Setup
 ### Requirements
-* Should use Java 11 or higher. Previous versions of Java are un-tested.
+* Should use Kotlin 1.3 or higher
 * Use Maven 3.5.2 or higher
 
 ## Support
-For questions and help:
-* Please post in course
-* Or post in the Slack Community exclusive to the course.
 
 GitHub Issues will not be addressed.
